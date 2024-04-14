@@ -13,3 +13,15 @@ body {
 .hide {
     display: none;
 }
+
+.win {
+    color: green;
+}
+
+.lose {
+    color: red;
+}
+
+.draw {
+    color: yellow;
+}
