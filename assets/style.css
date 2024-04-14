@@ -1,0 +1,15 @@
+body {
+    background-image: url(imgs/people-playing-paper-rock-scissors-royalty-free-illustration-1583269312.jpg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    font-weight: bold;
+}
+
+#content {
+    background-color: rgba(255, 255, 255, 0.5);
+    display: block;
+}
+
+.hide {
+    display: none;
+}
