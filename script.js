@@ -1,3 +1,6 @@
+/**
+ * Global Variables
+ */
 let start = document.getElementById('start');
 let guess = document.getElementById('guess');
 let restart = document.getElementById('restart');
@@ -16,6 +19,9 @@ let draw = document.getElementById('draw');
 var tally_player = 0;
 var tally_comp = 0;
 
+/**
+ * Event Listeners
+ */
 start.addEventListener('click', function (){
     var val = document.getElementById('guess').value;
     val = parseInt(val);
@@ -40,11 +46,14 @@ restart.addEventListener('click', function (){
     draw.classList.add('hide');
 });
 
+/**
+ * Core Game logic
+ */
 function game(num){
     var computer = Math.floor(Math.random() * 3) + 1;
     
-    console.log(num);
-    console.log(computer);
+    console.log('Computer guess: '+computer);
+    console.log('Player guess: '+num);
     if (num == computer){
         tally_comp ++;
         tally_player ++;
@@ -65,7 +74,11 @@ function game(num){
     player.innerHTML = tally_player;
     comp.innerHTML = tally_comp;
 
-    if (tally_player == 3){
+    if (tally_comp == 3 && tally_player == 3){
+        draw.classList.remove('hide');
+        start.classList.add('hide');
+        restart.classList.remove('hide');
+    } else if (tally_player == 3){
         player_w.classList.remove('hide');
         comp_l.classList.remove('hide');
         start.classList.add('hide');
@@ -73,10 +86,6 @@ function game(num){
     } else if (tally_comp == 3){
         comp_w.classList.remove('hide');
         player_l.classList.remove('hide');
-        start.classList.add('hide');
-        restart.classList.remove('hide');
-    } else if (tally_comp == 3 && tally_player == 3){
-        draw.classList.remove('hide');
         start.classList.add('hide');
         restart.classList.remove('hide');
     }
